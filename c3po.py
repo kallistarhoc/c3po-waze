@@ -97,7 +97,7 @@ class C3PO:
             self.r2d2_logging(
                 f"Start Day {current_day}: {current_planet} - {current_fuel} fuel"
             )
-            sleep(1)
+            sleep(0.5)
             if self.is_bounty_hunter_present(current_planet, current_day):
                 self.r2d2_logging(
                     "Bounty hunter on the planet... tread carefully young padawan"
@@ -158,8 +158,8 @@ class C3PO:
 
 if __name__ == "__main__":
     c3po = C3PO(sys.argv[1])
-    res = c3po.giveMeTheOdds(sys.argv[2])
-    if res != 0:
-        print("the odds are in our favor - {:0.2f}".format(res))
+    odds = c3po.giveMeTheOdds(sys.argv[2])
+    if odds != 0:
+        logger.info("the odds are in our favor - {:0.2f}".format(odds))
     else:
-        print("never tell me the odds - 0")
+        logger.info("never tell me the odds - 0")
